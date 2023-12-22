@@ -1,0 +1,40 @@
+_BASE_: "Base-RCNN-C4.yaml"  # "Base-RCNN-FPN.yaml"
+SEED: 42
+DATA_DIR: "/group/30042/zhangjiewu/datasets/"
+MODEL:
+  WEIGHTS: "weights/model_final_b1acc2.pkl" # "detectron2://ImageNetPretrained/MSRA/R-50.pkl"
+  MASK_ON: False
+  RESNETS:
+    DEPTH: 50
+SOLVER:
+  BASE_LR: 0.0001
+  STEPS: (1, )
+  GAMMA: 1.0
+  MAX_ITER: 2
+  WARMUP_ITERS: 0
+  CHECKPOINT_PERIOD: 100
+  IMS_PER_BATCH: 16
+TEST:
+  EVAL_PERIOD: 100
+DATALOADER:
+  NUM_WORKERS: 8
+  FILTER_EMPTY_ANNOTATIONS: False
+  ASPECT_RATIO_GROUPING: False
+REPLAY:
+  IMS_PER_STEP: 16
+  MEM_PER_CLASS: 5
+  APPLY_AUG: False
+SSOD:
+  ORACLE_IMS_PER_STEP: 16
+  PSEUDO_IMS_PER_STEP: 0
+  PSEUDO_TRAINING: True
+  PSEUDO_MODEL: 'teacher'   # ['teacher', 'student']
+  PSEUDO_WARMUP_ITERS: -1
+  PSEUDO_SCORE_THRESH: 0.7
+  PSEUDO_NMS_THRESH: 0.5
+  TRAIN_STRONG_AUG: False
+  REPLAY_STRONG_AUG: False
+  AUG_TYPES: ['none']
+  FL_GAMMA: 1.5
+  LAMBDA_U: 1.0
+  EMA_ALPHA: 0.99
