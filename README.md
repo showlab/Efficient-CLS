@@ -30,7 +30,7 @@ python -m pip install -e Efficient-CLS
 
 ### Datasets
 
-We provide the processed datasets in the Google Drive ([OAK](https://drive.google.com/file/d/13f5h1OhyW66ZfZzz8bnw_n7oJ-8r354b/view?usp=sharing), [EgoObjects](https://drive.google.com/file/d/1j7vzi7lKwFdl6zsAn_lzR3uIOQVJKZSu/view?usp=sharing)). Download the datasets and modify the `DATA_DIR` in `configs/efficient_cls.yaml` to the corresponding directory.
+We provide the processed datasets in the Google Drive ([OAK](https://drive.google.com/file/d/1TewbRDPhutTDHT5vl_0hE30hotZqcffV/view?usp=sharing), [EgoObjects](https://drive.google.com/file/d/10d0XSS5G_HW4P8ptVh7k-PT50Phmb3XN/view?usp=sharing)). Download the datasets and modify the `DATA_DIR` in `configs/efficient_cls.yaml` to the corresponding directory.
 
 ### Pretrained Models
 
